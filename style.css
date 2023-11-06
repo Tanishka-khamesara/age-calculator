@@ -1,0 +1,111 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(10,108,241);
+}
+
+#main{
+   width: 450px;
+   height: 300px;
+}
+
+#content{
+    width: 420px;
+    height: 100px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+    background-color: rgb(8,8,8);
+    border-radius: 6px;
+}
+
+#input-date{
+    width: 220px;
+    height: 50px;
+    margin-right: 45px;
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+
+#calculate{
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#output-Divs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 420px;
+    height: 150px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#blocks{
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+    background-color: rgb(8,8,8);
+    border-radius: 7px;
+}
+
+#outputYears{
+width: 100%;
+height: 80%;
+color: white;
+font-size: 30px;
+display: flex;
+font-weight: bold;
+align-items: center;
+justify-content: center;
+}
+
+#outputMonths{
+    width: 100%;
+    height: 80%;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    }
+
+    
+#outputDays{
+        width: 100%;
+        height: 80%;
+        color: white;
+        font-size: 30px;
+        display: flex;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        }
+        
+
+.blocks-bottom{
+width: 100%;
+height: 20%;
+border-radius: 7px;
+text-align: center;
+color: darkgray;
+}
