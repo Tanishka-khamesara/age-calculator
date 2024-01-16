@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>AGE CALCULATOR</title>
+    <title>Age calculator</title>
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="main">
-        <div id="content">
-            <input type="date" id="input-date" name="birthday">
-            <button type="submit" id="calculate">Calculate</button>
+    <h1>What's Your Age?</h1>
+    <div class="input-container">
+        <input type="date" id="data"/>
+        <button id="calculate">Calculate</button>
+    </div>
+    <div style="display: flex; gap:80px;">
+        <div class="card">
+            <p id="yearsprint">-</p>
+            <p>Years</p>
         </div>
-        <div id="output-Divs">
-                <div id="blocks">
-                    <div id="outputYears">-</div>
-                    <div class="blocks-bottom">Years</div>
-                </div>
-                <div id="blocks">
-                    <div id="outputMonths">-</div>
-                    <div class="blocks-bottom">Months</div>
-                </div>
-                <div id="blocks">
-                    <div id="outputDays">-</div>
-                    <div class="blocks-bottom">Days</div>
-                </div>
-        </div>    
+        <div class="card">
+            <p id="monthPrint">-</p>
+            <p>Months</p>
+        </div>
+        <div class="card">
+            <p>-</p>
+            <p>Days</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

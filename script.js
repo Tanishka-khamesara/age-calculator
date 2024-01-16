@@ -1,51 +1,45 @@
-let outputYears = document.getElementById('outputYears');
-let outputMonths = document.getElementById('outputMonths');
-let outputDays = document.getElementById('outputDays');
-
-let currentDate = new Date();
-let year = currentDate.getFullYear();
-let month = currentDate.getMonth();
-let day = currentDate.getDate();
-
-const inputDateRef = document.getElementById('input-date');
-const calculateBtn = document.getElementById('calculate');
-
-calculateBtn.addEventListener("click", () => {
-    let inputdateValue = new Date(inputDateRef.value);
-    let inputDay = inputdateValue.getDate();
-    let inputyear = inputdateValue.getFullYear();
-    let inputmonth = inputdateValue.getMonth();
-
-    if (inputdateValue > currentDate) {
-        alert("Please enter a valid date");
-        return; 
+const data = document.getElementById("data");
+const calculate = document.getElementById("calculate");
+const date = new Date();
+const today = date.getDate();
+const currentMonth = date.getMonth() + 1; 
+const currentYear = date.getFullYear();
+calculate.addEventListener('click', () => {
+    // console.log("button clicked");
+    // console.log(data.value);
+    // console.log(today);
+    if (data.value == " ") {
+        alert("please select a date");
     }
-
-    let fday = inputDay - day;
-    let fmonth = inputmonth - month;
-    let fyear = inputyear - year;
-
-    if (fmonth < 0 || (fmonth === 0 && fday < 0)) {
-        fyear--;
-        fmonth += 12;
+    else {
+        calculateAgeDifference();
     }
+})
+function calculateAgeDifference(){
+    const dob = data.value;
+    const dobYear = parseInt(dob.substring(0, 4));
+    const dobMonth = parseInt(dob.substring(5,7));
+    const dobDate = parseInt(dob.substring(8, 10));
+    // console.log(dobDate);
+    if (currentYear > dobYear || currentYear==dobYear) {
+        // console.log("continue");
+        // console.log(currentYear - dobYear);
+        let yearDifference = currentYear - dobYear;
 
-    if (fday < 0) {
-        const lastDayOfMonth = new Date(
-            currentDate.getFullYear(),
-            currentDate.getMonth(),
-            0
-        ).getDate();
-        fday += lastDayOfMonth;
-        fmonth--;
+        document.getElementById("yearsprint").innerText = yearDifference;
+        let monthDifference;
+        if (currentMonth > dobMonth) {
+            monthDifference = currentMonth - dobMonth;
+        } else {
+            yearDifference--;
+            monthDifference = 12 + currentMonth - dobMonth;
+        }
+        document.getElementById("monthPrint").innerText = monthDifference;
+        let dateDifference;
+        if (today > dobDate) {
+            dateDifference = today - dobDate;
+        }
+    } else {
+        alert("please enter a valid date");
     }
-    
-    if (fmonth === -1) {
-        fmonth = 11;
-        fyear--;
-    }
-
-    outputYears.innerText = fyear;
-    outputMonths.innerText = fmonth;
-    outputDays.innerText = fday;
-});
+}
